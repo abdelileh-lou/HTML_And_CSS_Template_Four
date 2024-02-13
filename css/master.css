@@ -1,0 +1,398 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "AR One Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--blue-at-color);
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+:focus {
+  outline: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/* Start Variables */
+:root {
+  --main-transition: 0.3s;
+  --blue-color: #0075ff;
+  --blue-at-color: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+/* End Variables */
+/* Start Components */
+/* End Components */
+/* start Page */
+.page {
+  background-color: #f1f5f9;
+  min-height: 200vh;
+}
+/* End Page */
+/* Start Aside */
+.page .aside {
+  width: 250px;
+  box-shadow: 0 0 10px #ddd;
+}
+.page .aside > h3 {
+  margin-bottom: 50px;
+}
+.page .aside > h3::before,
+.page .aside > h3::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  transform: translateX(-50%);
+}
+.page .aside > h3::before {
+  width: 80px;
+  height: 2px;
+  bottom: -20px;
+  left: 50%;
+}
+.page .aside > h3::after {
+  bottom: -29px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+.page .aside ul li a {
+  transition: var(--main-transition);
+  margin-bottom: 5px;
+}
+.page .aside ul li a:hover,
+.page .aside ul li a.active {
+  background-color: #f6f6f6;
+}
+.page .aside ul li a span {
+  font-size: 14px;
+  margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .page .aside {
+    width: 62px;
+    padding: 10px;
+  }
+  .page .aside h3 {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .page .aside h3::before,
+  .page .aside h3::after {
+    display: none;
+  }
+  .page .aside ul li a span {
+    display: none;
+  }
+}
+/* End Aside */
+/* Start Content */
+/* Start Header */
+.page .content {
+  overflow: hidden;
+  position: relative;
+}
+.page .content .header .search::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f002";
+  font-weight: 900;
+  font-size: 14px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--grey-color);
+}
+.page .content .header .search input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding-left: 30px;
+  width: 178px;
+  transition: var(--main-transition);
+}
+.page .content .header .search input:focus {
+  width: 220px;
+}
+.page .content .header .search input::placeholder {
+  transition: var(--main-transition);
+}
+.page .content .header .search input:focus::placeholder {
+  opacity: 0;
+}
+.page .content .header .icons .notification::before {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: -7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--red-color);
+}
+.page .content .header .icons img {
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+}
+/* End Header */
+.page .content h1 {
+  margin: 20px 20px 40px;
+}
+.page .content h1::before,
+.page .content h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+}
+.page .content h1::before {
+  background-color: white;
+  width: 120px;
+}
+.page .content h1::after {
+  background-color: black;
+  width: 40px;
+}
+.page .content .wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .page .content .wrapper {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+/* Start wrapper */
+.welcome {
+  overflow: hidden;
+}
+.welcome .intro img {
+  width: 170px;
+  margin-bottom: -10px;
+}
+.welcome .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid white;
+  padding: 2px;
+  box-shadow: 0 0 5px #ddd;
+  margin-left: 20px;
+  margin-top: -32px;
+}
+.welcome .body {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.welcome .body > div {
+  flex: 1;
+}
+.welcome .visit {
+  margin: 0 15px 15px auto;
+  transition: var(--main-transition);
+}
+.welcome .visit:hover {
+  background-color: var(--blue-at-color);
+}
+@media (max-width: 767px) {
+  .welcome .intro {
+    padding-bottom: 30px;
+  }
+  .welcome .avatar {
+    margin-left: 0;
+  }
+  .welcome .body > div {
+    margin-bottom: 20px;
+  }
+}
+/* End wrapper */
+/* End Content */
+/* Start Quick Draft Widget */
+.quick-draft textarea {
+  resize: none;
+  min-height: 180px;
+}
+.quick-draft .save {
+  margin-left: auto;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.quick-draft .save:hover {
+  background-color: var(--blue-at-color);
+}
+/* End Quick Draft Widget */
+/* Start Yearly Targets */
+.Targets .prog-holder .prog {
+  background-color: #cce3ff;
+  height: 5px;
+}
+.Targets .prog-holder .prog span::before {
+  content: attr(data-progress);
+  background-color: var(--blue-at-color);
+  position: absolute;
+  top: -35px;
+  right: 0;
+  font-size: 13px;
+  padding: 4px;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+}
+.Targets .prog-holder .prog span::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 11px;
+  border-style: dashed;
+  border-color: var(--blue-at-color) transparent transparent transparent;
+  border-radius: 0;
+  border-width: 6px;
+  padding: 0;
+}
+.Targets .prog-holder:nth-of-type(2) .prog span::after {
+  border-color: var(--orange-color) transparent transparent transparent;
+}
+.Targets .prog-holder:last-child .prog span::after {
+  border-color: var(--green-color) transparent transparent transparent;
+}
+.Targets .prog-holder:nth-of-type(2) .prog span::before {
+  background-color: var(--orange-color);
+}
+.Targets .prog-holder:last-child .prog span::before {
+  background-color: var(--green-color);
+}
+.Targets .prog-holder .prog span {
+  display: block;
+  background-color: var(--blue-at-color);
+  position: relative;
+  height: 100%;
+}
+.Targets .prog-holder:nth-of-type(2) .prog span {
+  background-color: var(--orange-color);
+}
+.Targets .prog-holder:last-child .prog span {
+  background-color: var(--green-color);
+}
+.Targets .prog-holder:nth-of-type(2) .prog {
+  background-color: #fdecce;
+  height: 5px;
+}
+.Targets .prog-holder:last-child .prog {
+  background-color: #d3f3df;
+  height: 5px;
+}
+.Targets .prog-holder i {
+  content: "\24";
+  background-color: #cce3ff;
+  color: var(--blue-at-color);
+  height: 70px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 20px; */
+}
+.Targets .prog-holder .fa-code {
+  color: var(--orange-color);
+  background-color: #fdecce;
+}
+.Targets .prog-holder .fa-user {
+  color: var(--green-color);
+  background-color: #d3f3df;
+}
+.Targets .prog-holder .hold .text h4 {
+  margin-bottom: 10px;
+}
+.Targets .prog-holder .hold .text {
+  margin-bottom: 8px;
+}
+/* End Yearly Targets */
+/* Start Tickets Statistics */
+.Tickets .box-hold {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.Tickets .box-hold .box {
+  border: 1px solid var(--grey-color);
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+}
+.Tickets .box-hold .box i {
+  display: block;
+}
+.Tickets .box-hold .box:first-of-type i {
+  color: var(--orange-color);
+}
+.Tickets .box-hold .box:nth-of-type(2) i {
+  color: var(--blue-at-color);
+}
+.Tickets .box-hold .box:nth-of-type(3) i {
+  color: var(--green-color);
+}
+.Tickets .box-hold .box:last-of-type i {
+  color: var(--red-color);
+}
+.Tickets .box-hold .box > span {
+  font-weight: 800;
+}
+/* End Tickets Statistics */
